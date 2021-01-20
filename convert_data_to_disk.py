@@ -8,8 +8,6 @@ import sys
 
 import dataset_from_file as dff
 
-#This is a test
-#This is a second test
 # set your seeds here, e.g., seeds are [367, 467, 567, ..., 1367]
 seeds = [i*100+67 for i in range(3,14)]
 
