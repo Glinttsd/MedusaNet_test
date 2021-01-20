@@ -79,11 +79,16 @@ def srand_data_load_save(input_list, label_list_file, pdbbind_dir, groundtruth_d
 
 
 def split_srand_label(pdb_dir, input_list):
+    seeds = [1, 2]
 
     for i in seeds:
-        f = open('/home/mdl/hzj5142/AtomNet/cross_validation/check_rmsd/sb_s' + str(i) + '.test', 'r')
-        f_train = open('/home/mdl/hzj5142/AtomNet/cross_validation/cv/train_sb_s' + str(i) + '.test', 'w')
-        f_test = open('/home/mdl/hzj5142/AtomNet/cross_validation/cv/test_sb_s' + str(i) + '.test', 'w')
+        # f = open('/home/mdl/hzj5142/AtomNet/cross_validation/check_rmsd/sb_s' + str(i) + '.test', 'r')
+        # f_train = open('/home/mdl/hzj5142/AtomNet/cross_validation/cv/train_sb_s' + str(i) + '.test', 'w')
+        # f_test = open('/home/mdl/hzj5142/AtomNet/cross_validation/cv/test_sb_s' + str(i) + '.test', 'w')
+
+        f = open('/home/glinttsd/MedusaNet/MedusaNet_test/check_rmsd/sb_s' + str(1) + '.test', 'r')
+        f_train = open('/home/glinttsd/MedusaNet/MedusaNet_test/cv/train_sb_s' + str(i) + '.test', 'w')
+        f_test = open('/home/glinttsd/MedusaNet/MedusaNet_test/cv/test_sb_s' + str(i) + '.test', 'w')
 
 
 
@@ -128,13 +133,15 @@ def split_srand_label(pdb_dir, input_list):
 
 if __name__ == "__main__":
 
-    pdb_dir = int(sys.argv[1])
+    pdb_dir = sys.argv[1]
     # the path of the labels (rmsd)
-    label_list_file = '/home/mdl/hzj5142/AtomNet/cross_validation/cv'
+    # label_list_file = '/home/mdl/hzj5142/AtomNet/cross_validation/cv'
+    label_list_file = '/home/glinttsd/MedusaNet/MedusaNet_test/cv/rmsd'
     # set the dir to the output poses
-    pdbbind_dir = '/home/mdl/hzj5142/AtomNet/medusa/pdbbind_output_S'
+    # pdbbind_dir = '/home/mdl/hzj5142/AtomNet/medusa/pdbbind_output_S'
+    pdbbind_dir = '/home/glinttsd/MedusaNet/MedusaNet_test/pdbbind_output_S[XYZ]'
     # set the dir to the pdbbind folder
-    groundtruth_dir = '/home/mdl/hzj5142/AtomNet/medusa/pdbbind'
+    groundtruth_dir = '/home/glinttsd/MedusaNet/MedusaNet_test/pdbbind'
 
     iteration = 20
     resolution = 20
